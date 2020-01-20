@@ -22,6 +22,8 @@ namespace EFWorkForce.Controllers
         // GET: Departments
         public async Task<IActionResult> Index()
         {
+            //var departments = _context.Department.Include(e => e.Employees);
+            //ViewData["EmployeeCount"] = departments.Employees;
             return View(await _context.Department
             .Include(e => e.Employees)
             .ToListAsync());
